@@ -1,18 +1,189 @@
+<!--
+
+You must show an inbox count somewhere on the page to show the current number of messages in your inbox.
+
+Set a recurring function to via the JavaScript setInterval function that will call our existing getNewMessage function that we have created for you that will return a newly created message with the same properties as your previous messages.
+
+-->
+
+
+
+<!doctype html>
 <html>
-	<head>
-		<script src="js/mail-generator.js"></script>
-		<link href="css/style.css" rel="stylesheet" media="screen">
-    <script>
-      window.onload = function(){
-        // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
-        // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        
+<head>
+<meta charset="UTF-8">
+<title>Leo's Gee-Mail App</title>
+
+<style type="text/css"> @import url("Gee-Mail.css");</style>
+
+<script type="text/javascript" src="mail-generator.js">
+
+
+</script>
+
+<script type="text/javascript">
+  
+   window.onload = function(){
+//** JS to preload first message onto <article> **//
+
+        document.getElementById("subject").innerHTML =window.geemails[0].subject;
+        document.getElementById("date").innerHTML =window.geemails[0].date;
+        document.getElementById("test").innerHTML =window.geemails[0].body;
+        document.getElementById("sender").innerHTML =window.geemails[0].sender;
+
+//** Below is the JS for to fill up the mail subjects**//
+
+
+        document.getElementById("senderAside").innerHTML =window.geemails[0].sender;
+        document.getElementById("dateAside").innerHTML =window.geemails[0].date;
+        document.getElementById("subjectAside").innerHTML =window.geemails[0].subject;
+
+        document.getElementById("senderAside1").innerHTML =window.geemails[1].sender;
+        document.getElementById("dateAside1").innerHTML =window.geemails[1].date;
+        document.getElementById("subjectAside1").innerHTML =window.geemails[1].subject;
+
+        document.getElementById("senderAside2").innerHTML =window.geemails[2].sender;
+        document.getElementById("dateAside2").innerHTML =window.geemails[2].date;
+        document.getElementById("subjectAside2").innerHTML =window.geemails[2].subject;
+
+        document.getElementById("senderAside3").innerHTML =window.geemails[3].sender;
+        document.getElementById("dateAside3").innerHTML =window.geemails[3].date;
+        document.getElementById("subjectAside3").innerHTML =window.geemails[3].subject;
+
+        document.getElementById("senderAside4").innerHTML =window.geemails[4].sender;
+        document.getElementById("dateAside4").innerHTML =window.geemails[4].date;
+        document.getElementById("subjectAside4").innerHTML =window.geemails[4].subject;
+
+        document.getElementById("senderAside5").innerHTML =window.geemails[5].sender;
+        document.getElementById("dateAside5").innerHTML =window.geemails[5].date;
+        document.getElementById("subjectAside5").innerHTML =window.geemails[5].subject;
+
+        document.getElementById("senderAside6").innerHTML =window.geemails[6].sender;
+        document.getElementById("dateAside6").innerHTML =window.geemails[6].date;
+        document.getElementById("subjectAside6").innerHTML =window.geemails[6].subject;          
+
+        document.getElementById("senderAside7").innerHTML =window.geemails[7].sender;
+        document.getElementById("dateAside7").innerHTML =window.geemails[7].date;
+        document.getElementById("subjectAside7").innerHTML =window.geemails[7].subject;   
+
+        document.getElementById("senderAside8").innerHTML =window.geemails[8].sender;
+        document.getElementById("dateAside8").innerHTML =window.geemails[8].date;
+        document.getElementById("subjectAside8").innerHTML =window.geemails[8].subject;   
+
+        document.getElementById("senderAside9").innerHTML =window.geemails[9].sender;
+        document.getElementById("dateAside9").innerHTML =window.geemails[9].date;
+        document.getElementById("subjectAside9").innerHTML =window.geemails[9].subject;  
       };
-    </script>
-	</head>
-	<body>
-		<div class="container" id="main">
-			Build Me!
-		</div>
-	</body>
+
+         function myFunction(geemailIndex) {
+            var x = document.getElementsByClassName("asideDiv");
+
+            for (index = 0; index < x.length; index++) {
+            var asideDiv = x[index];
+            if (asideDiv.style.backgroundColor == "orange") {
+                asideDiv.style.backgroundColor = "#8B8CC3";
+            }
+          }
+            x[geemailIndex].style.backgroundColor = "orange";
+            document.getElementById("subject").innerHTML =window.geemails[geemailIndex].subject;
+            document.getElementById("date").innerHTML =window.geemails[geemailIndex].date;
+            document.getElementById("test").innerHTML =window.geemails[geemailIndex].body;
+            document.getElementById("sender").innerHTML =window.geemails[geemailIndex].sender;
+       }
+
+
+</script>
+
+<div id="header"><h1>Leo's Gee-Mail App</h1><p id="inbox">10</p></div>
+
+</head>
+  
+  <body>
+
+
+	<article>
+
+      <p id = date>
+      <p id= sender>
+      <h1 id = subject></h1>
+      <p id = test>
+      <p id = qwe>
+
+  </article>
+
+
+
+	<aside>
+  <div class=asideDiv onclick="myFunction(0)" style="background-color:orange">
+    <div class=sender id=senderAside></div>
+    <div class=date id=dateAside></div>
+    <div class=subject id=subjectAside></div>
+  </div>
+
+
+  <div class=asideDiv onclick="myFunction(1)">
+    <div class=sender id=senderAside1></div>
+    <div class=date id=dateAside1></div>
+    <div class=subject id=subjectAside1></div>
+  </div>
+
+  <div class=asideDiv onclick="myFunction(2)">
+    <div class=sender id=senderAside2></div>
+    <div class=date id=dateAside2></div>
+    <div class=subject id=subjectAside2></div>
+  </div>
+
+  <div class=asideDiv onclick="myFunction(3)">
+    <div class= sender id=senderAside3></div>
+    <div class=date id=dateAside3></div>
+    <div class= subject id=subjectAside3></div>
+  </div>
+
+  <div class=asideDiv onclick="myFunction(4)">
+    <div class=sender id=senderAside4></div>
+    <div class=date id=dateAside4></div>
+    <div class=subject id=subjectAside4></div>
+  </div>
+
+  <div class=asideDiv onclick="myFunction(5)">
+    <div class=sender id=senderAside5></div>
+    <div class=date id=dateAside5></div>
+    <div class=subject id=subjectAside5></div>
+  </div>
+
+
+  <div class=asideDiv onclick="myFunction(6)">
+    <div class=sender id=senderAside6></div>
+    <div class=date id=dateAside6></div>
+    <div class=subject id=subjectAside6></div>
+  </div>
+
+  <div class=asideDiv onclick="myFunction(7)">
+    <div class=sender id=senderAside7></div>
+    <div class=date id=dateAside7></div>
+    <div class=subject id=subjectAside7></div>
+  </div>
+
+  <div class=asideDiv onclick="myFunction(8)">
+    <div class=sender id=senderAside8></div>
+    <div class=date id=dateAside8></div>
+    <div class=subject id=subjectAside8></div>
+  </div>
+
+
+  <div class=asideDiv onclick="myFunction(9)">
+    <div class=sender id=senderAside9></div>
+    <div class=date id=dateAside9></div>
+    <div class=subject id=subjectAside9></div>
+  </div>
+	</aside>
+</body>
+
+
+<footer>
+
+<a href="http://tetris.com/play-tetris">Tetris</a>
+
+</footer>
+
 </html>
